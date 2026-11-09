@@ -1,19 +1,6 @@
-PORTFOLIO TOMASZA PTASZYŃSKIEGO
+PORTFOLIO TOMASZA PTASZYŃSKIEGO, WERSJA 2
 
-PLIKI DO WRZUCENIA DO GŁÓWNEGO KATALOGU REPOZYTORIUM GITHUB:
-- index.html
-- style.css
-- script.js
+Wgraj index.html, script.js, style.css oraz CAŁY folder assets do głównego katalogu repozytorium GitHub.
+W folderze assets są zoptymalizowane screeny zrealizowanych wdrożeń.
 
-Wgraj te trzy pliki przez Add file > Upload files > Commit changes.
-NIE wgrywaj samego ZIP ani folderu portfolio-tomasz jako podfolderu.
-
-Adres bieżącego repozytorium:
-https://soniferousdesign.github.io/tomaszptaszynski/
-
-UWAGA:
-- Kafelki mają poglądowe grafiki i nie przedstawiają realnych wyników kampanii.
-- Link LinkedIn jest tymczasowy i wymaga podmiany przed udostępnianiem rekruterom.
-- Dane kontaktowe i prawdziwe realizacje dodamy w kolejnych iteracjach.
-- Nie publikuj poufnych danych pracodawcy ani dostępów do kont.
-- Strona działa jako statyczny HTML/CSS/JavaScript, bez instalowania środowiska.
+Przed wysyłaniem rekruterom: uzupełnij prawdziwy adres LinkedIn i dane kontaktowe. Szczegółowe kwoty z raportów wewnętrznych celowo nie są publikowane.
