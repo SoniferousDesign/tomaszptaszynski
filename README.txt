@@ -1,1 +1,0 @@
-Portfolio V3. Wgraj index.html do katalogu glownego repozytorium GitHub i zastap stary. Jesli chcesz portret, dodaj zdjecie jako portret.jpg do tego samego katalogu. Pozostale obrazy sa wbudowane w HTML.
