@@ -57,3 +57,42 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;letter-spacing:-.055em;lin
 .doc-zoom{position:absolute;bottom:13px;right:16px;padding:7px 12px!important;width:auto!important;height:34px!important;font-size:12px!important}
 @media(max-width:800px){.skills-grid{grid-template-columns:1fr 1fr}.portfolio-areas{grid-template-columns:1fr 1fr}.case-feature-preview img{height:340px}}
 @media(max-width:650px){.skills-section{padding-top:55px;padding-bottom:55px}.skills-grid,.portfolio-areas{grid-template-columns:1fr}.skill-group{padding:21px}.area-link{min-height:175px;padding:22px}.case-feature-preview{min-height:0}.case-feature-preview img{height:300px}.screenshot-shot>img{height:225px}.lightbox.document-mode{padding:60px 44px 62px}.document-scroll{height:calc(100vh - 145px)}.lightbox .doc-zoom{bottom:8px;right:9px}}
+
+/* Subtle interaction layer, inspired by Motion.dev. No dependencies. */
+:root{--micro-ease:cubic-bezier(.22,1,.36,1)}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+/* Keep every graphic on a consistent, white display surface. */
+.design-item{overflow:hidden}
+.design-item img{background:#fff!important;object-fit:contain;padding:18px!important}
+/* Tactile navigation, buttons and affordances. */
+.btn,.area-action,.contactlinks a,.desktopnav a,.languages a,.gallery-nav a,.design-item,.area-link,.skill-group,.skill-chips span,.screenshot-shot,.case-feature-preview,.stat{
+  transition-property:transform,background-color,border-color,box-shadow,color,opacity;
+  transition-duration:260ms;
+  transition-timing-function:var(--micro-ease);
+}
+.btn:hover,.btn:focus-visible,.area-link:hover .area-action,.area-link:focus-visible .area-action{transform:translateY(-2px)}
+.btn:active,.area-link:active .area-action{transform:translateY(0) scale(.985)}
+.area-link:hover,.area-link:focus-visible{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,.15)}
+.area-link:hover .area-icon,.area-link:focus-visible .area-icon{background:var(--lime);color:#142010;border-color:var(--lime)}
+.area-icon{transition:background-color .25s var(--micro-ease),color .25s var(--micro-ease),border-color .25s var(--micro-ease)}
+.skill-group:hover{border-color:#6d8b62;background:#202d21;transform:translateY(-2px)}
+.skill-chips span:hover{border-color:#89a578;background:#2a3b2a;color:#fff}
+.design-item:hover,.design-item:focus-within{transform:translateY(-3px);box-shadow:0 12px 25px rgba(0,0,0,.22)}
+.design-item img{transition:transform .45s var(--micro-ease),background-color .25s}
+.design-item:hover img{transform:scale(1.025)}
+.screenshot-shot:hover,.case-feature-preview:hover{box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.screenshot-shot img,.case-feature-preview img{transition:transform .45s var(--micro-ease)}
+.screenshot-shot:hover img,.case-feature-preview:hover img{transform:scale(1.035)}
+.contactlinks a:hover{transform:translateX(4px)}
+a:focus-visible,button:focus-visible,.zoomable:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+/* A 2px reading progress indicator. */
+.read-progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--lime);transform:scaleX(0);transform-origin:left center;z-index:9999;pointer-events:none;will-change:transform}
+/* IntersectionObserver sets the initial state only for elements below the fold. */
+.js-motion .motion-enter{opacity:0;transform:translateY(13px);transition:opacity .6s var(--micro-ease),transform .6s var(--micro-ease);transition-delay:var(--motion-delay,0ms)}
+.js-motion .motion-enter.motion-visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .js-motion .motion-enter{opacity:1!important;transform:none!important;transition:none!important}
+ .btn,.area-action,.contactlinks a,.desktopnav a,.languages a,.gallery-nav a,.design-item,.area-link,.skill-group,.skill-chips span,.screenshot-shot,.case-feature-preview,.stat,.design-item img,.screenshot-shot img,.case-feature-preview img{transition:none!important;transform:none!important}
+ .read-progress{display:none}
+}
