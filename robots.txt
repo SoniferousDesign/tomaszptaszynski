@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://soniferousdesign.github.io/tomaszptaszynski/sitemap.xml
